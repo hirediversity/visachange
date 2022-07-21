@@ -84,16 +84,16 @@ const Content = ({data, em, pw, inputs, loading, logo}) => {
                 return (
                 <div className='조회화면'>
                     <p>({data[i].하다시연번})<br/>
-                    {data[i].이름_합}님,<br/>
+                    {data[i].전체이름}님,<br/>
                     안녕하세요!</p>
                     <p>현재 외국인등록증 신청 진행 상황은<br/>
                     <b>{진행상황}</b>입니다.</p>
 
-                    <p>{data[i].이름_합}同学,<br/>
+                    <p>{data[i].전체이름}同学,<br/>
                     目前国人登陆证申请进行状态为<br/>
                     <b>{진행중국어}</b></p>
 
-                    <p>Hello, {data[i].이름_합}!<br/>
+                    <p>Hello, {data[i].전체이름}!<br/>
                     Your current status for the ARC application is:<br/>
                     <b>{진행영어}</b></p>
 
