@@ -8,6 +8,8 @@ const Content = ({data, em, pw, inputs, loading, logo}) => {
     let [open, setOpen] = useState(false);
     let [link2, setLink2] = useState(false);
     let [link3, setLink3] = useState(false);
+    let [link4, setLink4] = useState(false);
+    let [link5, setLink5] = useState(false);
     let [payment, setPayment] = useState(false);
     let [date, setDate] = useState(false);
     let errors = [];
@@ -126,6 +128,21 @@ const Content = ({data, em, pw, inputs, loading, logo}) => {
                         : null
                     }
 
+                    {
+
+                    data[i].진행상황 === '4-1. 반려' || data[i].진행상황 === '4-2. 이첩' || data[i].진행상황 === '4-3. 학생에게 반려 이메일 안내 완료'
+                    ? setLink4(true)
+                    : null
+
+                    }
+
+                    {
+
+                    link4 === true
+                    ? <반려폼 />
+                    : null
+                    }
+
                     
 
                 </div>
@@ -154,12 +171,38 @@ const Content = ({data, em, pw, inputs, loading, logo}) => {
             window.location.href = `${data[i].결제폼링크}`
         }
 
+        function 반려링크() {
+            window.location.href = `${data[i].반려링크}`
+        }
+
         function 결제버튼() {
             return <button id="결제" onClick={() => {setLink3(true)}}>결제하기</button>
         }
 
         function 출입국제출일() {
             return <p>전자민원 신청일 : {data[i].APP전자민원신청일}</p>
+        }
+
+        function 반려폼() {
+            return (
+                <>
+                    <p>ㅡ</p>
+                    <p>반려 사유는 아래와 같습니다</p>
+
+                    <div id="reasonBox">{data[i].반려사유}
+                    </div>
+
+                   
+                    
+                    <button id="납부하기" onClick={() => {setLink5(true)}}>반려 보완 서류 제출 / 点击补交材料<br/>Submission of supplementary documents</button>
+
+                    {
+                        link5 === true
+                        ? <반려링크 />
+                        : null
+                    }
+                </>
+            )
         }
 
         function Form() {
