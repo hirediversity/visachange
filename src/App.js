@@ -6,13 +6,13 @@ import Content from './components/Content';
 var Airtable = require('airtable');
 var base = new Airtable({apiKey: 'keyVWc7psFCmYWDcd'}).base('appL44cwktJKhNKIP');
 
-const table = base('연장 업무 처리');
+const table = base('자격변경 업무 처리');
 const data = [];
 
 const getRecords = async () => {
   const records = await table.select({
       maxRecords: 99999,
-      view: 'APP 뷰'
+      view: 'App 뷰'
   }).eachPage((lists, fetchNextPage) => {
     lists.forEach((list) => data.push(list.fields))
     fetchNextPage();
@@ -30,16 +30,14 @@ function App() {
     <div className="App">
       <div id="search">
         
-        <p id='title'>* 비자 연장 신청 현황 조회 *</p>
+        <p id='title'>* 비자 자격변경 신청 현황 조회 *</p>
         <input id="email" placeholder='e-mail'></input>
         <input id="rcNumber" placeholder='password'></input>
         <button type="button" className="btn btn-primary btn-sm" id="searchBtn" onClick={() => {
           setBox(true);
           }}>Login</button>
 
-          <p id='loginform'>로그인이 안 되는 경우 페이지 새로고침을 하지 않고 5분 뒤에 다시 시도해 주세요<br/>
-          If you can't log in please try again 5 minutes later, do not refresh the page.<br/>
-          如果无法进行登录，请将本页面维持5分钟之后再次输入账号密码进行尝试。谢谢
+          <p id='loginform'>If you can't log in please try again 5 minutes later, do not refresh the page.
           </p>
        
           <div id="loading" className="spinner-border spinner-border-sm" role="status">
