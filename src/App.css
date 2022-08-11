@@ -1,5 +1,6 @@
 html {
   width: 100%;
+  margin-bottom: 100px;
 }
 
 .App {
@@ -49,6 +50,16 @@ html {
   margin: 20px auto;
 }
 
+#loading1 {
+  display: none;
+  margin: 20px auto;
+}
+
+#loading2 {
+  display: none;
+  margin: 20px auto;
+}
+
 #err {
   display: none;
   color: rgb(202, 47, 47);
@@ -71,6 +82,18 @@ html {
 }
 
 #search {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#search1 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#search2 {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -127,7 +150,7 @@ input::placeholder {
 
 #납부하기 {
   margin-top: 15px;
-  margin-bottom: 130px;
+  margin-bottom: 20px;
   height: 60px;
   width: 90%;
   border-radius: 5px;
@@ -166,7 +189,7 @@ input::placeholder {
 #hirelogo {
   display: flex;
   width: 60px;
-  margin: 100px auto -85px auto;
+  margin: 70px auto -85px auto;
 }
 
 #lan {
@@ -213,3 +236,6 @@ input::placeholder {
 
 }
 
+#결제 {
+  margin-top: 15px;
+}
