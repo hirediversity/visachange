@@ -21,23 +21,35 @@
     <title>HireVisa</title>
   </head>
   <body>
-    <!-- <div id="lan">
+    <div id="lan">
       <div id="kobutton">
     <img id="ko" src="./free-icon-south-korea-330591.png"></div>
-    <div>
+    <div id="usbutton">
     <img id="us" src="./free-icon-united-states-330459.png"></div>
-    <div>
+    <div id="cnbutton">
     <img id="cn" src="./free-icon-china-330651.png"></div>
-    </div> -->
+    </div>
     <img id="hirelogo" src='./Group 1.png'>
-    <!-- <script>
+    <script>
       document.getElementById('kobutton').onclick = () => {
         document.getElementById('root').style.display = 'none'
         document.getElementById('KOroot').style.display = 'block'
+        document.getElementById('CNroot').style.display = 'none'
       }
-    </script> -->
+      document.getElementById('usbutton').onclick = () => {
+        document.getElementById('root').style.display = 'block'
+        document.getElementById('KOroot').style.display = 'none'
+        document.getElementById('CNroot').style.display = 'none'
+      }
+      document.getElementById('cnbutton').onclick = () => {
+        document.getElementById('root').style.display = 'none'
+        document.getElementById('KOroot').style.display = 'none'
+        document.getElementById('CNroot').style.display = 'block'
+      }
+    </script>
     <div id="root"></div>
-    <!-- <div id="KOroot" style="display: none;"></div> -->
+    <div id="KOroot" style="display: none;"></div>
+    <div id="CNroot" style="display: none;"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
